@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas 2026 - Sistema Georreferenciado</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de Login -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Rutas 2026</h1>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Aplicación Principal -->
+    <div id="mainApp" class="main-app" style="display: none;">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>Rutas 2026</h1>
+                <div class="user-info">
+                    <span>Bienvenido, <strong id="currentUser"></strong></span>
+                    <button id="logoutBtn" class="logout-btn">Cerrar Sesión</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Principal -->
+        <main class="main-content">
+
+            <!-- Sección del Mapa -->
+            <section class="map-section">
+                <h1>Mapa Dinámico - Rutas 2026</h1>h2>
+                
+                <!-- Sección de Búsqueda de Rutas -->
+                <div class="route-search-panel">
+                    <div class="search-header">
+                        <h3>📍 Seleccionar Ruta</h3>
+                    </div>
+                    
+                    <div class="search-form">
+                        <div class="form-group">
+                            <label for="originSelect">Punto de Origen</label>
+                            <select id="originSelect" class="route-select">
+                                <option value="">Selecciona un punto de origen</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="destinationSelect">Punto de Destino</label>
+                            <select id="destinationSelect" class="route-select">
+                                <option value="">Selecciona un punto de destino</option>
+                            </select>
+                        </div>
+                        
+                        <button id="searchRoutesBtn" class="btn-search-routes">✈️ Ver Rutas</button>
+                    </div>
+                    
+                    <div class="legend-routes">
+                        <h4>Leyenda de Rutas</h4>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #0066ff;"></span>
+                            <span>Ruta Principal</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #ff9900; border: 1px dashed #ff9900;"></span>
+                            <span>Ruta Secundaria</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #00cc00; border: 1px dashed #00cc00;"></span>
+                            <span>Ruta Terciaria</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-wrapper">
+                    <div id="map" class="map-container"></div>
+                    
+
+                </div>
+                
+                <!-- Sección de Visualización de Rutas -->
+                <div class="routes-display-panel" id="routesDisplayPanel" style="display: none;">
+                    <div class="routes-header">
+                        <h3 id="routeTitle">Rutas Disponibles</h3>
+                    </div>
+                    
+                    <div class="routes-container" id="routesContainer">
+                        <!-- Las rutas se cargarán dinámicamente aquí -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Alfa</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
