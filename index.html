@@ -15,39 +15,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Pantalla de Login -->
-    <div id="loginScreen" class="login-screen">
-        <div class="login-container">
-            <div class="login-header">
-                <h1>Rutas 2026</h1>
-            </div>
-            
-            <form id="loginForm" class="login-form">
-                <div class="form-group">
-                    <label for="username">Usuario:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                
-                <button type="submit" class="login-btn">Iniciar Sesión</button>
-            </form>
-        </div>
-    </div>
-
     <!-- Aplicación Principal -->
-    <div id="mainApp" class="main-app" style="display: none;">
+    <div class="main-app">
         <!-- Header -->
         <header class="app-header">
             <div class="header-content">
                 <h1>Rutas 2026</h1>
-                <div class="user-info">
-                    <span>Bienvenido, <strong id="currentUser"></strong></span>
-                    <button id="logoutBtn" class="logout-btn">Cerrar Sesión</button>
-                </div>
             </div>
         </header>
 
@@ -56,7 +29,7 @@
 
             <!-- Sección del Mapa -->
             <section class="map-section">
-                <h1>Mapa Dinámico - Rutas 2026</h1>h2>
+                <h2>Mapa Dinámico - Rutas 2026</h2>
                 
                 <!-- Sección de Búsqueda de Rutas -->
                 <div class="route-search-panel">
@@ -101,8 +74,6 @@
                 
                 <div class="map-wrapper">
                     <div id="map" class="map-container"></div>
-                    
-
                 </div>
                 
                 <!-- Sección de Visualización de Rutas -->
@@ -120,7 +91,7 @@
 
         <!-- Footer -->
         <footer class="app-footer">
-            <p>Alfa</p>
+            <p>Rutas 2026</p>
         </footer>
     </div>
 
@@ -130,4 +101,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
